@@ -25335,7 +25335,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuet
 
 
 window.User = __WEBPACK_IMPORTED_MODULE_2__Helpers_User__["a" /* default */];
-// console.log(User.id())
+window.EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -65370,6 +65370,7 @@ var User = function () {
         key: 'logout',
         value: function logout() {
             __WEBPACK_IMPORTED_MODULE_1__AppStorage__["a" /* default */].clear();
+            window.location = '/forum';
         }
     }, {
         key: 'name',
@@ -65638,7 +65639,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -65678,6 +65679,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       items: [{ title: 'Forum', to: '/forum', show: true }, { title: 'Ask Question', to: '/ask', show: User.loggedIn() }, { title: 'Category', to: '/category', show: User.loggedIn() }, { title: 'Login', to: '/login', show: !User.loggedIn() }, { title: 'Logout', to: '/logout', show: User.loggedIn() }]
     };
+  },
+  created: function created() {
+    EventBus.$on('logout', function () {
+      User.logout();
+    });
   }
 });
 

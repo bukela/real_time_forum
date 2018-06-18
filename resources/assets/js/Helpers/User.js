@@ -31,6 +31,7 @@ class User {
 
     logout() {
         AppStorage.clear()
+        window.location = '/forum'
     }
 
     name() {
