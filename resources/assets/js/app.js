@@ -23,7 +23,7 @@ window.User = User
 
 Vue.component('AppHome', require('./components/AppHome.vue'));
 import router from './Router/router'
-
+Vue.config.productionTip = false; //disable using vue in dev mode warning in console
 const app = new Vue({
     el: '#app',
     router

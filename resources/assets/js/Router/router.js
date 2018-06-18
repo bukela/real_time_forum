@@ -12,7 +12,7 @@ const routes = [
 
   const router = new VueRouter({
     routes, // short for `routes: routes`
-    hashbang : false,
+    hashbang : false, //sklanjaju # iz url
     mode : 'history' //sklanjaju # iz url
   })
 
