@@ -13,12 +13,20 @@
           label="Password"
           required
         ></v-text-field>
-    
+        <v-spacer></v-spacer>
         <v-btn
         color="green"
         type="submit"
         >Login
         </v-btn>
+
+        <router-link to="/signup">
+            <v-btn
+            flat
+            color="orange"
+            >Sign up
+            </v-btn>
+        </router-link>
       </v-form>
 </v-container>
 </template>

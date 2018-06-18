@@ -3,7 +3,7 @@ class Token {
     isValid(token) {
         const payload = this.payload(token);
         if(payload) {
-            return payload.iss == "http://real.test/api/auth/login" ? true : false
+            return payload.iss == "http://real.test/api/auth/login" || "http://real.test/api/auth/signup" ? true : false
             // proverava da li je token sa naseg servera iss
             //iss dobijamo kada dekodiramo token kroz payload metod
         }
