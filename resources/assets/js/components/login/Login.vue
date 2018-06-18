@@ -41,6 +41,11 @@ export default {
             }
         }
     },
+    created() {
+        if(User.loggedIn()) {
+            this.$router.push({ name:'forum' }) //ako je user logovan ne moze da ide na login i signup preko url nego ga redirect na forum
+        }
+    },
     methods: {
         login() {
             User.login(this.form)

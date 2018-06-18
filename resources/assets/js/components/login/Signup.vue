@@ -66,10 +66,18 @@ export default {
             }
         }
     },
+    created() {
+        if(User.loggedIn()) {
+            this.$router.push({ name:'forum' }) //ako je user logovan ne moze da ide na login i signup preko url nego ga redirect na forum
+        }
+    },
     methods: {
         signup() {
             axios.post('/api/auth/signup', this.form)
-            .then(res => User.responseAfterLogin(res))
+            .then(res => {
+                User.responseAfterLogin(res)
+                this.$router.push({ name:'forum' }) //redirektuje na forum posle signupa
+            })
             .catch(error => this.errors = error.response.data.errors)
         }
     }
