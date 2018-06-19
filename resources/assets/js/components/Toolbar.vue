@@ -25,6 +25,7 @@
 export default {
   data() {
     return {
+      // loggedIn: User.loggedIn(),
       items: [
         {title: 'Forum', to: '/forum', show: true},
         {title: 'Ask Question', to: '/ask', show: User.loggedIn()},

@@ -23,7 +23,7 @@
         <router-link to="/signup">
             <v-btn
             flat
-            color="orange"
+            color="blue"
             >Sign up
             </v-btn>
         </router-link>

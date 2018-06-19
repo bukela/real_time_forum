@@ -42,7 +42,7 @@
         <router-link to="/login">
             <v-btn
             flat
-            color="orange"
+            color="blue"
             >Login
             </v-btn>
         </router-link>
