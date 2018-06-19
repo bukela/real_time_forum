@@ -30,6 +30,7 @@ class Question extends Model
     }
     
     public function getPathAttribute() {
-        return asset("api/question/$this->slug"); //za slug kroz questonresource
+        // return asset("api/question/$this->slug"); //za slug kroz questonresource
+        return "/question/$this->slug"; //za slug kroz questonresource(obrisan api iz url)
     }
 }

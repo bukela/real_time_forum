@@ -17,3 +17,4 @@
 
 Route::view('/', 'home');
 Route::view('/{any}', 'home'); //zbog vue routera,laravel ne vidi rutu koju menja vue
+Route::view('/{any}/{any1}', 'home'); //zbog vue routera,laravel ne vidi rutu koju menja vue
