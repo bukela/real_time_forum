@@ -6,14 +6,16 @@
             <div class="headline">
                 {{ data.title }}
             </div>
+            <span class="grey--text">Asked by {{ data.user }} {{ data.created_at }}</span>
           </div>
+          <v-spacer></v-spacer>
+          <v-btn color="blue">5 Replies</v-btn>
         </v-card-title>
-        <v-card-text><div class="grey--text">Asked by {{ data.user }} {{ data.created_at }}</div></v-card-text>
-        <v-card-text>
-            <p class="body-2">{{ data.body }}</p>
-        </v-card-text>
+       
+        <v-card-text v-html="data.body"></v-card-text>
     </v-card>
 </v-container>
+<!-- v-html zbog formatiranja texta koji dolazi iz baze (bold,italic,color...) -->
 </template>
 
 <script>

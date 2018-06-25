@@ -47,8 +47,9 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        // auth()->user()->question()->create($request->all()); // ubacuje user id preko relationshipa
-        Question::create($request->all());
+        auth()->user()->question()->create($request->all()); // ubacuje user id preko relationshipa
+        // $request['slug'] = str_slug($request->title); odradjeno je preko question modela i boot funkcije
+        // Question::create($request->all());
         return response('Created', 201);
     }
 

@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+    protected static function boot()//slug je odradjen preko boot funkcije iz model.php
+    {
+        parent::boot();
+
+        static::creating(function ($question) {
+            $question->slug = str_slug($question->title);//slug je odradjen preko boot funkcije iz model.php
+        });
+    }
+
     protected $fillable = [
         'title','slug','body','category_id','user_id'
     ];
